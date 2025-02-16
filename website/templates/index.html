@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Tic-Tac-Toe Arena{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<!-- Game Header -->
+<div class="game-header">
+    <h2 id="turn-indicator">Player X's Turn</h2>
+</div>
+
+<!-- Score + Timers Layout -->
+<div class="game-arena">
+    <div class="score-box">
+        <h1 id="score-x">0</h1>
+        <span>Player X</span>
+    </div>
+
+    <div class="timers-box">
+        <div class="timer general-timer">
+            <h2 id="game-timer">00:00</h2>
+            <span>Game Timer</span>
+        </div>
+        <div class="timer round-timer">
+            <h2 id="round-timer">15</h2>
+            <span>Turn Timer</span>
+        </div>
+    </div>
+
+    <div class="score-box">
+        <h1 id="score-o">0</h1>
+        <span>Player O</span>
+    </div>
+</div>
+
+<!-- Game Field -->
+<div class="game-container">
+    <div class="game-field">
+        <div class="game-cell"></div>
+        <div class="game-cell"></div>
+        <div class="game-cell"></div>
+        <div class="game-cell"></div>
+        <div class="game-cell"></div>
+        <div class="game-cell"></div>
+        <div class="game-cell"></div>
+        <div class="game-cell"></div>
+        <div class="game-cell"></div>
+    </div>
+</div>
+
+{% endblock %}
