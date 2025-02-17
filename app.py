@@ -1,7 +1,9 @@
 from website import app
+from website.config import CONFIG
 
 def main():
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.secret_key = CONFIG.SECRET_KEY
+    app.run(**CONFIG.get_flask_setup())
 
 if __name__ == '__main__':
     main()
